@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,suma;
+    cout<<"Digite el primer termino: "; cin>>a;
+    cout<<"Digite el segundo termino: "; cin>>b;
+    suma= a+b;
+    cout<<"La suma es: "; cout<<suma;
+    
+
+    return 0;
+}
