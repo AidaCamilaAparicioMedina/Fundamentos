@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,b,x;
+    cout<<"Introduce el valor de a: ";cin>>a;
+    cout<<"Introduce el valor de b: ";cin>>b;
+    x=a;
+    a=b;
+    b=x;
+    cout<<"Los nuevos valores son: ";
+    cout<<"a: "<<a;
+    cout<<" y b: "<<b;
+
+    return 0;
+}
