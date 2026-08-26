@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float r,p,a;
+    cout<<"Introduce el radio: ";cin>>r;
+    p=2*3.1416*r;
+    a=3.1416*r*r;
+    cout<<"El perimetro es: "<<p<<endl;
+    cout<<"El area es: "<<a;
+    
+    return 0;
+}
