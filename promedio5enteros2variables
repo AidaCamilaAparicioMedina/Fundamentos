@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float a,b;
+    cout<<"Introduce el primer numero entero: ";cin>>a;
+    b=a;
+    cout<<"Introduce el segundo numero entero: ";cin>>a;
+    b=b+a;
+    cout<<"Introduce el tercer numero entero: ";cin>>a;
+    b=b+a;
+    cout<<"Introduce el cuarto numero entero: ";cin>>a;
+    b=b+a;
+    cout<<"Introduce el quinto numero entero: ";cin>>a;
+    b=(b+a)/5;
+    cout<<"El promedio de los 5 enteros es: "<<b;
+    
+    return 0;
+}
