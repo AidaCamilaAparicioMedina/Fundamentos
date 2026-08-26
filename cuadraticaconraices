@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    float a,b,c,d;
+    double x1,x2,x12;
+    
+    cout<<"Ingresar el coeficiente de x^2: "; cin>>a;
+    if (a==0)
+    { 
+        cout<<"ERROR: No es una funcion cuadratica";
+    }
+        else 
+        { 
+          cout<<"\nIngresar el coeficiente de x: "; cin>>b;
+          cout<<"\nIngresar el termino independiente: "; cin>>c;
+          d=b*b-4*a*c;
+          if (d==0)
+          {
+               cout<<"\nLa solucion es única: ";
+               x12=-b/(2*a);
+               cout<<x12;
+          }
+               else 
+                 if (d>0)
+                   {      x1=(-b+sqrt(b*b-4*a*c))/(2*a);
+                          x2=(-b-sqrt(b*b-4*a*c))/(2*a);
+                          cout<<"\nLa primera solucion es: "; cout<<x1;
+                          cout<<"\nLa segunda solucion es: "; cout<<x2;
+                    }
+                    
+                 else {
+                     x1=-b/2*a;
+                     x2=sqrt(-d)/(2*a);
+                      cout<<"\nLa primera solucion es: "<<x1<<"+"<<x2<<"i"<<endl;
+                      cout<<"\nLa segunda solucion es: "<<x1<<"-"<<x2<<"i";
+                     
+                 }
+        }
+    
+return 0;
+}
