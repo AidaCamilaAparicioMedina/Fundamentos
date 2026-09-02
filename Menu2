@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int opcion,cantidad;
+    double cuentaparcial=0,cuentatotal=0;
+    cout<<"Bienvenido al restaurante..."<<endl;
+    
+     do {
+        cout<<"------------------Menu------------------"<<endl;
+        cout<<"1.- Hamburguesa               3 Bs"<<endl;
+        cout<<"2.- Hamburguesa con queso     5 Bs"<<endl;
+        cout<<"3.- Papas fritas              2 Bs"<<endl;
+        cout<<"4.- Soda                      2,5 Bs "<<endl;
+        cout<<"0.- Salir"<<endl;
+        cout<<"Que deseas pedir? ";
+        cin>>opcion;
+            switch(opcion){
+               case 1:
+                 cout<<"Cuantas Hamburguesas desea? ";cin>>cantidad;
+                 cuentaparcial=cantidad*3;
+                 cuentatotal=cuentatotal+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" Hamburguesas a tu cuenta."<<endl;
+                 break;
+               case 2:
+                 cout<<"Cuantas Hamburguesas con queso desea? ";cin>>cantidad;
+                 cuentaparcial=cantidad*5;
+                 cuentatotal=cuentatotal+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" Hamburguesas con queso a tu cuenta."<<endl;
+                 break;
+               case 3:
+                 cout<<"Cuantas Papas fritas desea? ";cin>>cantidad;
+                 cuentaparcial=cantidad*2;
+                 cuentatotal=cuentatotal+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" papas fritas a tu cuenta."<<endl;
+                 break;
+               case 4:
+                 cout<<"Cuantas sodas desea? ";cin>>cantidad;
+                 cuentaparcial=cantidad*2.5;
+                 cuentatotal=cuentatotal+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" sodas a tu cuenta."<<endl;
+                 break;
+               case 0:
+                 cout<<"Has salido del Menu"<<endl;
+                 break;
+                 return 0;
+               default:
+                 cout<<"Opcion invalida "<<endl;
+                 return 0;
+                }
+        }while (opcion != 0);
+    
+    cout<<"El total de tu cuenta es: "<<cuentatotal<<" Bs.";
+    return 0;
+}
