@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int opcion,cantham=0,canthamq=0,cantpapas=0,cantsoda=0,cantidad=0,canttotal;
+    double totalham=0,totalhamq=0,totalpapas=0,totalsoda=0,cuentatotal=0,cuentaparcial;
+    cout<<"Bienvenido al restaurante..."<<endl;
+    
+     do {
+        cout<<"------------------Menu------------------"<<endl;
+        cout<<"1.- Hamburguesa               3 Bs"<<endl;
+        cout<<"2.- Hamburguesa con queso     5 Bs"<<endl;
+        cout<<"3.- Papas fritas              2 Bs"<<endl;
+        cout<<"4.- Soda                      2,5 Bs "<<endl;
+        cout<<"0.- Ver mi pedido"<<endl;
+        cout<<"Que deseas pedir? ";
+        cin>>opcion;
+            switch(opcion){
+               case 1:
+                   cout<<"Cuantas Hamburguesas desea? ";cin>>cantidad;
+                   cantham=cantham+cantidad;
+                   cuentaparcial=cantidad*3;
+                   totalham=totalham+cuentaparcial;
+                   cout<<"Se han registrado "<<cantidad<<" Hamburguesas a tu cuenta."<<endl;
+                   break;
+                  
+               
+               case 2:
+                 cout<<"Cuantas Hamburguesas con queso desea? ";cin>>cantidad;
+                 canthamq=canthamq+cantidad;
+                 cuentaparcial=cantidad*5;
+                 totalhamq=totalhamq+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" Hamburguesas con queso más a tu cuenta."<<endl;
+                 break;
+                 
+               case 3:
+                 cout<<"Cuantas Papas fritas desea? ";cin>>cantidad;
+                 cantpapas=cantpapas+cantidad;
+                 cuentaparcial=cantidad*2;
+                 totalpapas=totalpapas+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" papas más a tu cuenta."<<endl;
+                 break;
+                 
+               case 4:
+                 cout<<"Cuantas sodas desea? ";cin>>cantidad;
+                 cantsoda=cantsoda+cantidad;
+                 cuentaparcial=cantidad*2.5;
+                 totalsoda=totalsoda+cuentaparcial;
+                 cout<<"Se han registrado "<<cantidad<<" sodas más a tu cuenta."<<endl;
+                 break;
+                 
+               case 0:
+                 cout<<"Has salido del Menu"<<endl;
+                 break;
+                 
+               default:
+                 cout<<"Opcion invalida "<<endl;
+                 return 0;
+                }
+        }while (opcion != 0);
+        
+    cuentatotal=totalham+totalhamq+totalpapas+totalsoda;
+    canttotal=cantham+canthamq+cantpapas+cantsoda;
+    
+    cout<<"ITEM                   CANTIDAD       TOTAL PARCIAL"<<endl;
+    cout<<"Hamburguesa            "<<cantham<<"              "<<totalham<<"Bs"<<endl;
+    cout<<"Hamburguesa con queso  "<<canthamq<<"              "<<totalhamq<<"Bs"<<endl;
+    cout<<"Papas fritas           "<<cantpapas<<"              "<<totalpapas<<"Bs"<<endl;
+    cout<<"Soda                   "<<cantsoda<<"              "<<totalsoda<<"Bs"<<endl;
+    cout<<"TOTAL                  "<<canttotal<<"              "<<cuentatotal<<"Bs";
+
+    return 0;
+}
