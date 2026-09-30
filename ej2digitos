@@ -1,0 +1,26 @@
+//Autor: Aida Camila Aparicio Medina
+//Ejercicio: 2 del practico de digitos
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() { 
+	int n,a, d, z=0;
+	do {
+		z = 0;
+		do {
+			cout << "Ingrese el numero: "<<endl;
+			cin >> n;
+		} while (n <= 0);
+		cout << "Z =";
+		while (n!=0) {
+			d = n % 10;
+			z = z*10 + d;
+			n = n / 10;
+		}
+		cout << z<<endl;
+		cout << "Si desea terminar el programa ingrese 0 " << endl;
+		cin >> a;
+	} while (a != 0);
+	return 0;
+}
