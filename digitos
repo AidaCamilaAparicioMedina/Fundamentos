@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() { 
+	int n, d, suma;
+	char a;
+	do {
+		suma = 0;
+		do {
+			cout << "Ingrese el numero"<<endl;
+			cin >> n;
+		} while (n <= 0);
+		cout << "S = ";
+		while (n!=0) {
+			d = n % 10;
+			n = n / 10;
+			suma += d;
+			cout << d;
+			if (n > 0)
+				cout << "+";
+		}
+		cout << "=" << suma << endl;
+		cout << "Desea continuar? (s/n)" << endl;
+		cin >> a;
+	} while (a != ' s');
+	return 0;
+}
