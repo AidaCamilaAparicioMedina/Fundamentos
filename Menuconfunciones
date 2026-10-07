@@ -1,0 +1,101 @@
+// factorial.cpp : Defines the entry point for the console application.
+//
+
+#include <iostream>
+#include "stdlib.h"
+#include "Math.h"
+
+using namespace std;
+
+//declarar prototipos
+int elmenor(int n1, int n2);
+int signo(float n1);
+int elevar(int n, int x);
+
+
+
+int main()
+{
+	int a, b, opcion=0;
+	float c;
+	// Menu
+	do {
+		//Desplegar las opciones
+		cout << "\t Menu \n";
+		cout << "=============================== \n";
+		cout << "1. El menor entre 2 numeros \n";
+		cout << "2. El signo de un numero \n";
+		cout << "3. Elevar un numero entero a otro\n";
+		cout << "0. Salir\n";
+		cout << "Opcion: ";
+		cin >> opcion;
+		// Condicional multiple
+		switch (opcion)
+		{
+		case 1: 
+			cout << "Ingrese el primer numero: ";
+			cin >> a;
+			cout << "Ingrese el segundo numero: ";
+			cin >> b;
+			cout << "El menor de los dos numeros es: " << elmenor(a, b);
+
+			break;
+
+		case 2: 
+			cout << "Ingrese el numero: ";
+			cin >> c;
+			a = signo(c);
+			cout << "El signo del numero es: " << a;
+
+			break;
+
+		case 3: 
+			cout << "Ingrese el exponente : ";
+			cin >> a;
+			cout << "Ingrese la base : ";
+			cin >> b;
+			cout << a << " elevado a " << b << " es: " << elevar(a,b);
+
+			break;
+
+		case 0: cout << "Saliendo del Menu";
+			break;
+		default: cout << "ERROR de opcion";
+			break;
+		}
+		system("cls");
+	} while (opcion != 0);
+
+}
+
+int elmenor (int n1,int n2) 
+{
+	int menor;
+	if (n1 < n2)
+		menor = n1;
+	else
+		menor = n2;
+
+	return menor;
+}
+
+int signo(float n1)
+{
+	if (n1 == 0)
+		return 0;
+	else 
+		if (n1 < 0)
+			return -1;
+		else 
+			return 1;
+}
+
+int elevar(int n, int x)
+{ 
+	int acum = 1;
+	for (int i = 1; i <= n; i++) 
+	{
+		acum = acum * x;
+	}
+	return acum;
+}
