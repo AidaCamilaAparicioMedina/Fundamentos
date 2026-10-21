@@ -1,0 +1,100 @@
+#include <iostream>
+#define MAX 100//CONSTANTE COMPILADOR
+using namespace std;
+
+//PORTOTIPOS
+void cargar(int a[], int tam);//pide los datos en el vector
+void mostrar(int a[], int tam);
+void burbuja(int a[], int tam);
+int diferenciaMayor(int a[], int tam);
+
+int main()
+{
+    int opcion,n,v[MAX],aux;
+    do { 
+        cout << "-----MENU----"<<endl;
+        cout << "1. cargar"<< endl;
+        cout << "2. mostrar"<<endl;
+        cout << "3. clasificar"<< endl;
+        cout << "4. diferencia mayor" << endl;
+        cout << "0. salir" << endl;
+
+        cout << "Digite una opcion: ";
+        cin >> opcion;
+
+        switch(opcion) {
+                case 1:
+                    do {
+                        cout << "Cuantos elementos quiere?";
+                        cin >> n;
+                    } while (n > MAX||n<=0);
+                    cargar(v, n);
+                    break;
+
+                case 2:
+                    mostrar(v, n);
+                    break;
+
+                case 3:
+                    burbuja(v, n);
+
+                    break;
+
+                case 4:
+                    cout<<"La diferencia mayor es: "<<diferenciaMayor(v, n)<<endl;
+                    break;
+
+
+                case 0:
+                    cout << "saliendo...";
+                    break;
+
+                default:
+                    cout << "Error";
+                 }
+
+    } while (opcion != 0);
+
+    return 0;
+}
+
+void cargar(int a[], int tam) { 
+    cout << "Digite los valores al vector: "<<endl;
+    for (int i=0;i<tam;i++) {
+        cout << "v[" << i << "]";
+        cin >> a[i];
+    }
+}
+
+void mostrar(int a[], int tam) { 
+    for (int i = 0; i < tam; i++) {
+        cout << "v[" << i << "]";
+        cout << a[i]<<endl;
+    }
+}
+
+void burbuja(int a[], int tam) { 
+    int aux = 0;
+    for (int i = 0; i < tam-1; i++) 
+        for (int j = i+1; j < tam; j++) {
+            if (a[i] > a[j]) {
+                aux = a[j];
+                a[j] = a[i];
+                a[i] = aux;
+            }
+        }
+}
+
+int diferenciaMayor(int a[], int tam) {
+    float mayor = abs(a[1] - a[0]);
+
+    for (int i = 1; i < tam - 1; i++) {
+        float diferencia = abs(a[i + 1] - a[i]);
+        }
+
+        if (diferencia > mayor) {
+            mayor = diferencia;
+        }
+    }
+    return mayor;
+}
